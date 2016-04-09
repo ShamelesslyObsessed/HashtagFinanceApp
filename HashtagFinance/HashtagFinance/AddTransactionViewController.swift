@@ -9,12 +9,15 @@
 import UIKit
 
 class AddTransactionViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate  {
-
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
+    
+    @IBOutlet weak var subtractButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     var transaction: Transaction?
     
@@ -43,6 +46,20 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UITex
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func pressedAdd(sender: UIButton) {
+        let text: String = amountTextField.text!
+        if (text[text.startIndex.advancedBy(0)] == "-") {
+            amountTextField.text = String(amountTextField.text!.characters.dropFirst())
+        }
+    }
+    
+    @IBAction func pressedSubtract(sender: UIButton) {
+        let text: String = amountTextField.text!
+        if (text[text.startIndex.advancedBy(0)] != "-"){
+            amountTextField.text = "-" + amountTextField.text!
+        }
+    }
+    
     // Create an item for the CustomListTable to use if the Save button was pressed
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if submitButton === sender {
@@ -52,6 +69,7 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UITex
             let date = datePicker.date
             
             transaction = Transaction(amount: amount, name: name, desc: desc, date: date)
+            transactionTotal = transactionTotal + amount
         }
     }
     
