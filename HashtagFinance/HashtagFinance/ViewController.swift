@@ -99,25 +99,44 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 1
     }
     
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+            let itemDetailViewController = segue.destinationViewController as! AddTransactionViewController
+            if let selectedCell = sender as? TransactionTableViewCell {
+                
+                // Get the cell that was selected
+                let indexPath = tableView.indexPathForCell(selectedCell)!
+                let selectedItem = transactions[indexPath.row]
+                itemDetailViewController.transaction = selectedItem
+            }
+        
+    }
+    
     @IBAction func unwindToList (sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? AddTransactionViewController, transaction = sourceViewController.transaction {
-            //
-            //            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            //                // Update an existing item
-            //                transactions[selectedIndexPath.row] = transaction
-            //                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
-            //            }
-            //            else {
-            //                // Add item
+            
+                        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                            // Update an existing item
+                            transactions[selectedIndexPath.row] = transaction
+                            tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                        }
+                        else {
+                            // Add item
             let newIndexPath = NSIndexPath(forRow: transactions.count, inSection: 0)
             transactions.append(transaction)
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
             
-            // }
+             }
             // Save items so that they persist if the app is closed
             saveItems()
             updateMoneyLabel()
         }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

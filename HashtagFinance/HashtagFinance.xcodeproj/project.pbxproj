@@ -16,6 +16,8 @@
 		F06737171CB8CA6D00354AF9 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737161CB8CA6D00354AF9 /* GroupsTableViewCell.swift */; };
 		F06737191CB8CABE00354AF9 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737181CB8CABE00354AF9 /* Group.swift */; };
 		F067371B1CB8CAF700354AF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067371A1CB8CAF700354AF9 /* AddGroupViewController.swift */; };
+		F067371D1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067371C1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift */; };
+		F067371F1CB8DC7200354AF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067371E1CB8DC7200354AF9 /* LoginViewController.swift */; };
 		F0EF07EA1CB8589100DEC33C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF07E91CB8589100DEC33C /* AppDelegate.swift */; };
 		F0EF07EC1CB8589100DEC33C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF07EB1CB8589100DEC33C /* ViewController.swift */; };
 		F0EF07EF1CB8589100DEC33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EF07ED1CB8589100DEC33C /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		F06737161CB8CA6D00354AF9 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		F06737181CB8CABE00354AF9 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		F067371A1CB8CAF700354AF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		F067371C1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAddButtonTableViewCell.swift; sourceTree = "<group>"; };
+		F067371E1CB8DC7200354AF9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0EF07E61CB8589100DEC33C /* HashtagFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashtagFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EF07E91CB8589100DEC33C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0EF07EB1CB8589100DEC33C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				F06737161CB8CA6D00354AF9 /* GroupsTableViewCell.swift */,
 				F06737181CB8CABE00354AF9 /* Group.swift */,
 				F067371A1CB8CAF700354AF9 /* AddGroupViewController.swift */,
+				F067371C1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				F0EF07E91CB8589100DEC33C /* AppDelegate.swift */,
 				F0EF07EB1CB8589100DEC33C /* ViewController.swift */,
 				F0EF07ED1CB8589100DEC33C /* Main.storyboard */,
+				F067371E1CB8DC7200354AF9 /* LoginViewController.swift */,
 				F0EF08171CB86D6900DEC33C /* TabBarController.swift */,
 				F0EF07F01CB8589100DEC33C /* Assets.xcassets */,
 				F0EF07F21CB8589100DEC33C /* LaunchScreen.storyboard */,
@@ -322,11 +328,13 @@
 				F0EF07EC1CB8589100DEC33C /* ViewController.swift in Sources */,
 				F0EF07EA1CB8589100DEC33C /* AppDelegate.swift in Sources */,
 				F067370A1CB8A63B00354AF9 /* AccountsTableViewController.swift in Sources */,
+				F067371D1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift in Sources */,
 				F06737191CB8CABE00354AF9 /* Group.swift in Sources */,
 				F067370E1CB8A6AA00354AF9 /* Account.swift in Sources */,
 				F067371B1CB8CAF700354AF9 /* AddGroupViewController.swift in Sources */,
 				F06737171CB8CA6D00354AF9 /* GroupsTableViewCell.swift in Sources */,
 				F06737151CB8CA5600354AF9 /* GroupsTableViewController.swift in Sources */,
+				F067371F1CB8DC7200354AF9 /* LoginViewController.swift in Sources */,
 				F0EF081C1CB87B6300DEC33C /* AddTransactionViewController.swift in Sources */,
 				F06737081CB8952A00354AF9 /* TransactionTableViewCell.swift in Sources */,
 				F0EF081E1CB880F900DEC33C /* Transaction.swift in Sources */,
