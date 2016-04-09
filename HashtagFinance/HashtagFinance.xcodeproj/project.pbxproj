@@ -14,6 +14,10 @@
 		F0EF07F41CB8589100DEC33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EF07F21CB8589100DEC33C /* LaunchScreen.storyboard */; };
 		F0EF07FF1CB8589100DEC33C /* HashtagFinanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF07FE1CB8589100DEC33C /* HashtagFinanceTests.swift */; };
 		F0EF080A1CB8589100DEC33C /* HashtagFinanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF08091CB8589100DEC33C /* HashtagFinanceUITests.swift */; };
+		F0EF08181CB86D6900DEC33C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF08171CB86D6900DEC33C /* TabBarController.swift */; };
+		F0EF081C1CB87B6300DEC33C /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF081B1CB87B6300DEC33C /* AddTransactionViewController.swift */; };
+		F0EF081E1CB880F900DEC33C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF081D1CB880F900DEC33C /* Transaction.swift */; };
+		F0EF08201CB8836200DEC33C /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF081F1CB8836200DEC33C /* TransactionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		F0EF08051CB8589100DEC33C /* HashtagFinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HashtagFinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EF08091CB8589100DEC33C /* HashtagFinanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagFinanceUITests.swift; sourceTree = "<group>"; };
 		F0EF080B1CB8589100DEC33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EF08171CB86D6900DEC33C /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F0EF081B1CB87B6300DEC33C /* AddTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		F0EF081D1CB880F900DEC33C /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		F0EF081F1CB8836200DEC33C /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,10 @@
 				F0EF07E91CB8589100DEC33C /* AppDelegate.swift */,
 				F0EF07EB1CB8589100DEC33C /* ViewController.swift */,
 				F0EF07ED1CB8589100DEC33C /* Main.storyboard */,
+				F0EF081F1CB8836200DEC33C /* TransactionTableViewCell.swift */,
+				F0EF081D1CB880F900DEC33C /* Transaction.swift */,
+				F0EF081B1CB87B6300DEC33C /* AddTransactionViewController.swift */,
+				F0EF08171CB86D6900DEC33C /* TabBarController.swift */,
 				F0EF07F01CB8589100DEC33C /* Assets.xcassets */,
 				F0EF07F21CB8589100DEC33C /* LaunchScreen.storyboard */,
 				F0EF07F51CB8589100DEC33C /* Info.plist */,
@@ -256,8 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EF08181CB86D6900DEC33C /* TabBarController.swift in Sources */,
 				F0EF07EC1CB8589100DEC33C /* ViewController.swift in Sources */,
 				F0EF07EA1CB8589100DEC33C /* AppDelegate.swift in Sources */,
+				F0EF081C1CB87B6300DEC33C /* AddTransactionViewController.swift in Sources */,
+				F0EF08201CB8836200DEC33C /* TransactionTableViewCell.swift in Sources */,
+				F0EF081E1CB880F900DEC33C /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
