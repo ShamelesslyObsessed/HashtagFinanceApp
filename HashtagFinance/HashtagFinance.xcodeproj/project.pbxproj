@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E29FF9A1CC03FB400EC5E32 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29FF991CC03FB400EC5E32 /* User.swift */; };
+		F06737081CB8952A00354AF9 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737071CB8952A00354AF9 /* TransactionTableViewCell.swift */; };
+		F067370A1CB8A63B00354AF9 /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737091CB8A63B00354AF9 /* AccountsTableViewController.swift */; };
+		F067370C1CB8A65B00354AF9 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067370B1CB8A65B00354AF9 /* AccountsTableViewCell.swift */; };
+		F067370E1CB8A6AA00354AF9 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067370D1CB8A6AA00354AF9 /* Account.swift */; };
+		F06737121CB8AA0E00354AF9 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737111CB8AA0E00354AF9 /* AddAccountViewController.swift */; };
+		F06737151CB8CA5600354AF9 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737141CB8CA5600354AF9 /* GroupsTableViewController.swift */; };
+		F06737171CB8CA6D00354AF9 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737161CB8CA6D00354AF9 /* GroupsTableViewCell.swift */; };
+		F06737191CB8CABE00354AF9 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737181CB8CABE00354AF9 /* Group.swift */; };
+		F067371B1CB8CAF700354AF9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067371A1CB8CAF700354AF9 /* AddGroupViewController.swift */; };
+		F067371D1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067371C1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift */; };
+		F067371F1CB8DC7200354AF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067371E1CB8DC7200354AF9 /* LoginViewController.swift */; };
 		F0EF07EA1CB8589100DEC33C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF07E91CB8589100DEC33C /* AppDelegate.swift */; };
 		F0EF07EC1CB8589100DEC33C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF07EB1CB8589100DEC33C /* ViewController.swift */; };
 		F0EF07EF1CB8589100DEC33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EF07ED1CB8589100DEC33C /* Main.storyboard */; };
@@ -14,6 +26,9 @@
 		F0EF07F41CB8589100DEC33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EF07F21CB8589100DEC33C /* LaunchScreen.storyboard */; };
 		F0EF07FF1CB8589100DEC33C /* HashtagFinanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF07FE1CB8589100DEC33C /* HashtagFinanceTests.swift */; };
 		F0EF080A1CB8589100DEC33C /* HashtagFinanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF08091CB8589100DEC33C /* HashtagFinanceUITests.swift */; };
+		F0EF08181CB86D6900DEC33C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF08171CB86D6900DEC33C /* TabBarController.swift */; };
+		F0EF081C1CB87B6300DEC33C /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF081B1CB87B6300DEC33C /* AddTransactionViewController.swift */; };
+		F0EF081E1CB880F900DEC33C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF081D1CB880F900DEC33C /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +49,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E29FF991CC03FB400EC5E32 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F06737071CB8952A00354AF9 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionTableViewCell.swift; path = ../TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		F06737091CB8A63B00354AF9 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
+		F067370B1CB8A65B00354AF9 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
+		F067370D1CB8A6AA00354AF9 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		F06737111CB8AA0E00354AF9 /* AddAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		F06737141CB8CA5600354AF9 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		F06737161CB8CA6D00354AF9 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
+		F06737181CB8CABE00354AF9 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		F067371A1CB8CAF700354AF9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		F067371C1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAddButtonTableViewCell.swift; sourceTree = "<group>"; };
+		F067371E1CB8DC7200354AF9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F0EF07E61CB8589100DEC33C /* HashtagFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HashtagFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EF07E91CB8589100DEC33C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0EF07EB1CB8589100DEC33C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +74,9 @@
 		F0EF08051CB8589100DEC33C /* HashtagFinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HashtagFinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EF08091CB8589100DEC33C /* HashtagFinanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagFinanceUITests.swift; sourceTree = "<group>"; };
 		F0EF080B1CB8589100DEC33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EF08171CB86D6900DEC33C /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F0EF081B1CB87B6300DEC33C /* AddTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
+		F0EF081D1CB880F900DEC33C /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +104,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E4DA75F1CBDA50200A4AEDA /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				8E29FF991CC03FB400EC5E32 /* User.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		F067370F1CB8A76400354AF9 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				F06737071CB8952A00354AF9 /* TransactionTableViewCell.swift */,
+				F0EF081D1CB880F900DEC33C /* Transaction.swift */,
+				F0EF081B1CB87B6300DEC33C /* AddTransactionViewController.swift */,
+			);
+			name = Transactions;
+			sourceTree = "<group>";
+		};
+		F06737101CB8A77C00354AF9 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				F06737091CB8A63B00354AF9 /* AccountsTableViewController.swift */,
+				F067370B1CB8A65B00354AF9 /* AccountsTableViewCell.swift */,
+				F067370D1CB8A6AA00354AF9 /* Account.swift */,
+				F06737111CB8AA0E00354AF9 /* AddAccountViewController.swift */,
+			);
+			name = Accounts;
+			sourceTree = "<group>";
+		};
+		F06737131CB8CA4500354AF9 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				F06737141CB8CA5600354AF9 /* GroupsTableViewController.swift */,
+				F06737161CB8CA6D00354AF9 /* GroupsTableViewCell.swift */,
+				F06737181CB8CABE00354AF9 /* Group.swift */,
+				F067371A1CB8CAF700354AF9 /* AddGroupViewController.swift */,
+				F067371C1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
 		F0EF07DD1CB8589100DEC33C = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +168,15 @@
 		F0EF07E81CB8589100DEC33C /* HashtagFinance */ = {
 			isa = PBXGroup;
 			children = (
+				8E4DA75F1CBDA50200A4AEDA /* Objects */,
+				F06737131CB8CA4500354AF9 /* Groups */,
+				F06737101CB8A77C00354AF9 /* Accounts */,
+				F067370F1CB8A76400354AF9 /* Transactions */,
 				F0EF07E91CB8589100DEC33C /* AppDelegate.swift */,
 				F0EF07EB1CB8589100DEC33C /* ViewController.swift */,
 				F0EF07ED1CB8589100DEC33C /* Main.storyboard */,
+				F067371E1CB8DC7200354AF9 /* LoginViewController.swift */,
+				F0EF08171CB86D6900DEC33C /* TabBarController.swift */,
 				F0EF07F01CB8589100DEC33C /* Assets.xcassets */,
 				F0EF07F21CB8589100DEC33C /* LaunchScreen.storyboard */,
 				F0EF07F51CB8589100DEC33C /* Info.plist */,
@@ -256,8 +333,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EF08181CB86D6900DEC33C /* TabBarController.swift in Sources */,
+				F067370C1CB8A65B00354AF9 /* AccountsTableViewCell.swift in Sources */,
+				F06737121CB8AA0E00354AF9 /* AddAccountViewController.swift in Sources */,
 				F0EF07EC1CB8589100DEC33C /* ViewController.swift in Sources */,
 				F0EF07EA1CB8589100DEC33C /* AppDelegate.swift in Sources */,
+				F067370A1CB8A63B00354AF9 /* AccountsTableViewController.swift in Sources */,
+				F067371D1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift in Sources */,
+				8E29FF9A1CC03FB400EC5E32 /* User.swift in Sources */,
+				F06737191CB8CABE00354AF9 /* Group.swift in Sources */,
+				F067370E1CB8A6AA00354AF9 /* Account.swift in Sources */,
+				F067371B1CB8CAF700354AF9 /* AddGroupViewController.swift in Sources */,
+				F06737171CB8CA6D00354AF9 /* GroupsTableViewCell.swift in Sources */,
+				F06737151CB8CA5600354AF9 /* GroupsTableViewController.swift in Sources */,
+				F067371F1CB8DC7200354AF9 /* LoginViewController.swift in Sources */,
+				F0EF081C1CB87B6300DEC33C /* AddTransactionViewController.swift in Sources */,
+				F06737081CB8952A00354AF9 /* TransactionTableViewCell.swift in Sources */,
+				F0EF081E1CB880F900DEC33C /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +576,7 @@
 				F0EF08101CB8589100DEC33C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0EF08111CB8589100DEC33C /* Build configuration list for PBXNativeTarget "HashtagFinanceTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +585,7 @@
 				F0EF08131CB8589100DEC33C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0EF08141CB8589100DEC33C /* Build configuration list for PBXNativeTarget "HashtagFinanceUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +594,7 @@
 				F0EF08161CB8589100DEC33C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
