@@ -28,10 +28,10 @@ class Group: NSObject, NSCoding{
     }
     
     // MARK: Initialization
-    init?(name: String, balance: Double, founder: User) {
+    init?(name: String, balance: Double, participants: [User]) {
         self.balance = balance
         self.name = name
-        self.participants.append(founder)
+        self.participants = participants
         
         super.init()
     }
@@ -51,7 +51,7 @@ class Group: NSObject, NSCoding{
 
         
         // Must call designated initializer.
-        self.init(name: name, balance: balance, founder: (participants?.first)!)
+        self.init(name: name, balance: balance, participants: participants!)
     }
 
 }
