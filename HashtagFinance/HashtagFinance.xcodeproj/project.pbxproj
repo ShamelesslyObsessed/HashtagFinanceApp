@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8E29FF9A1CC03FB400EC5E32 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29FF991CC03FB400EC5E32 /* User.swift */; };
+		A6FE4E101CC6DA3200170A44 /* logo-reverse.png in Resources */ = {isa = PBXBuildFile; fileRef = A6FE4E0F1CC6DA3200170A44 /* logo-reverse.png */; };
+		A6FE4E121CC6DB8C00170A44 /* logo-black.png in Resources */ = {isa = PBXBuildFile; fileRef = A6FE4E111CC6DB8C00170A44 /* logo-black.png */; };
 		F06737081CB8952A00354AF9 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737071CB8952A00354AF9 /* TransactionTableViewCell.swift */; };
 		F067370A1CB8A63B00354AF9 /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737091CB8A63B00354AF9 /* AccountsTableViewController.swift */; };
 		F067370C1CB8A65B00354AF9 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067370B1CB8A65B00354AF9 /* AccountsTableViewCell.swift */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		8E29FF991CC03FB400EC5E32 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A6FE4E0F1CC6DA3200170A44 /* logo-reverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-reverse.png"; path = "../../../Downloads/logo-reverse.png"; sourceTree = "<group>"; };
+		A6FE4E111CC6DB8C00170A44 /* logo-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-black.png"; path = "../../../Downloads/logo-black.png"; sourceTree = "<group>"; };
 		F06737071CB8952A00354AF9 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionTableViewCell.swift; path = ../TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		F06737091CB8A63B00354AF9 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
 		F067370B1CB8A65B00354AF9 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +114,15 @@
 				8E29FF991CC03FB400EC5E32 /* User.swift */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		A6FE4E131CC6DB9B00170A44 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A6FE4E0F1CC6DA3200170A44 /* logo-reverse.png */,
+				A6FE4E111CC6DB8C00170A44 /* logo-black.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		F067370F1CB8A76400354AF9 /* Transactions */ = {
@@ -174,6 +187,7 @@
 				F067370F1CB8A76400354AF9 /* Transactions */,
 				F0EF07E91CB8589100DEC33C /* AppDelegate.swift */,
 				F0EF07EB1CB8589100DEC33C /* ViewController.swift */,
+				A6FE4E131CC6DB9B00170A44 /* images */,
 				F0EF07ED1CB8589100DEC33C /* Main.storyboard */,
 				F067371E1CB8DC7200354AF9 /* LoginViewController.swift */,
 				F0EF08171CB86D6900DEC33C /* TabBarController.swift */,
@@ -306,7 +320,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6FE4E121CC6DB8C00170A44 /* logo-black.png in Resources */,
 				F0EF07F41CB8589100DEC33C /* LaunchScreen.storyboard in Resources */,
+				A6FE4E101CC6DA3200170A44 /* logo-reverse.png in Resources */,
 				F0EF07F11CB8589100DEC33C /* Assets.xcassets in Resources */,
 				F0EF07EF1CB8589100DEC33C /* Main.storyboard in Resources */,
 			);
@@ -494,6 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HashtagFinance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MobileDevelopment.HashtagFinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HashtagFinance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MobileDevelopment.HashtagFinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
