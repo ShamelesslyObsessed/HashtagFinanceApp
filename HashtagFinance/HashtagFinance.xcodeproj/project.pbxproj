@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E29FF9A1CC03FB400EC5E32 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E29FF991CC03FB400EC5E32 /* User.swift */; };
 		F06737081CB8952A00354AF9 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737071CB8952A00354AF9 /* TransactionTableViewCell.swift */; };
 		F067370A1CB8A63B00354AF9 /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737091CB8A63B00354AF9 /* AccountsTableViewController.swift */; };
 		F067370C1CB8A65B00354AF9 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067370B1CB8A65B00354AF9 /* AccountsTableViewCell.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E29FF991CC03FB400EC5E32 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F06737071CB8952A00354AF9 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionTableViewCell.swift; path = ../TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		F06737091CB8A63B00354AF9 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
 		F067370B1CB8A65B00354AF9 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E4DA75F1CBDA50200A4AEDA /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				8E29FF991CC03FB400EC5E32 /* User.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 		F067370F1CB8A76400354AF9 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +168,7 @@
 		F0EF07E81CB8589100DEC33C /* HashtagFinance */ = {
 			isa = PBXGroup;
 			children = (
+				8E4DA75F1CBDA50200A4AEDA /* Objects */,
 				F06737131CB8CA4500354AF9 /* Groups */,
 				F06737101CB8A77C00354AF9 /* Accounts */,
 				F067370F1CB8A76400354AF9 /* Transactions */,
@@ -329,6 +340,7 @@
 				F0EF07EA1CB8589100DEC33C /* AppDelegate.swift in Sources */,
 				F067370A1CB8A63B00354AF9 /* AccountsTableViewController.swift in Sources */,
 				F067371D1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift in Sources */,
+				8E29FF9A1CC03FB400EC5E32 /* User.swift in Sources */,
 				F06737191CB8CABE00354AF9 /* Group.swift in Sources */,
 				F067370E1CB8A6AA00354AF9 /* Account.swift in Sources */,
 				F067371B1CB8CAF700354AF9 /* AddGroupViewController.swift in Sources */,
