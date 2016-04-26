@@ -13,11 +13,6 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let navItemImage = UIImageView(frame: CGRectMake(1, 1, 10, 10))
-        let logo = UIImage(named: "logo-black-sm.png")
-        navItemImage.image = logo
-        
-        navigationItem.titleView = navItemImage
         self.tabBar.tintColor = UIColor(red:0.0, green:0.5, blue:0.25, alpha:1.0)
         self.selectedIndex = 2
     }

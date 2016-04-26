@@ -179,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9S-HL-c94" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="497" y="1835"/>
+            <point key="canvasLocation" x="463" y="1835"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hmj-wM-scF">
@@ -215,14 +215,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ta8-fC-DQK">
-                                <rect key="frame" x="135" y="318" width="330" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2ue-xY-4Hc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PHt-pY-mub">
                                 <rect key="frame" x="135" y="402" width="330" height="30"/>
                                 <constraints>
@@ -241,25 +233,35 @@
                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-reverse.png" translatesAutoresizingMaskIntoConstraints="NO" id="R6h-dD-pw2">
-                                <rect key="frame" x="127" y="54" width="324" height="172"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ta8-fC-DQK">
+                                <rect key="frame" x="135" y="318" width="330" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="324" id="Uph-o4-Jhe"/>
+                                    <constraint firstAttribute="height" constant="30" id="2ue-xY-4Hc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-reverse.png" translatesAutoresizingMaskIntoConstraints="NO" id="hvh-SK-c8J">
+                                <rect key="frame" x="180" y="64" width="240" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="HY2-Er-trt"/>
+                                    <constraint firstAttribute="height" constant="100" id="e37-wh-Le2"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ta8-fC-DQK" firstAttribute="trailing" secondItem="N0q-N0-iLO" secondAttribute="trailing" id="1pj-ir-jyz"/>
-                            <constraint firstItem="R6h-dD-pw2" firstAttribute="top" secondItem="ZFj-xv-DBM" secondAttribute="bottom" constant="34" id="B1l-HG-LAF"/>
+                            <constraint firstItem="hvh-SK-c8J" firstAttribute="top" secondItem="ZFj-xv-DBM" secondAttribute="bottom" constant="44" id="6iM-7Z-1m8"/>
                             <constraint firstItem="1NH-Xr-KPr" firstAttribute="trailing" secondItem="ZUM-fj-gt8" secondAttribute="trailing" id="BNs-SQ-8xS"/>
                             <constraint firstItem="N0q-N0-iLO" firstAttribute="leading" secondItem="PHt-pY-mub" secondAttribute="leading" id="Evq-xl-M4k"/>
                             <constraint firstItem="1NH-Xr-KPr" firstAttribute="leading" secondItem="ZUM-fj-gt8" secondAttribute="leading" id="G4T-Pf-GI7"/>
                             <constraint firstItem="PHt-pY-mub" firstAttribute="top" secondItem="N0q-N0-iLO" secondAttribute="bottom" constant="8" symbolic="YES" id="GIv-S4-AKy"/>
+                            <constraint firstItem="hvh-SK-c8J" firstAttribute="centerX" secondItem="9l7-W1-v86" secondAttribute="centerX" id="I0G-wG-iLl"/>
                             <constraint firstItem="lHD-HD-aMo" firstAttribute="top" secondItem="x4H-Ur-bmR" secondAttribute="bottom" constant="42" id="KAQ-f4-gpX"/>
                             <constraint firstItem="N0q-N0-iLO" firstAttribute="top" secondItem="ta8-fC-DQK" secondAttribute="bottom" constant="25" id="RYz-XE-xNW"/>
                             <constraint firstItem="lHD-HD-aMo" firstAttribute="top" secondItem="x4H-Ur-bmR" secondAttribute="bottom" constant="91" id="Srf-Qv-Gt4"/>
-                            <constraint firstItem="1NH-Xr-KPr" firstAttribute="top" secondItem="R6h-dD-pw2" secondAttribute="bottom" constant="8" symbolic="YES" id="UoO-RT-FDZ"/>
+                            <constraint firstItem="1NH-Xr-KPr" firstAttribute="top" secondItem="hvh-SK-c8J" secondAttribute="bottom" constant="70" id="ZgB-Yy-5Ix"/>
                             <constraint firstItem="ZUM-fj-gt8" firstAttribute="top" secondItem="1NH-Xr-KPr" secondAttribute="bottom" constant="34" id="bbd-P5-64Y"/>
                             <constraint firstItem="ta8-fC-DQK" firstAttribute="leading" secondItem="N0q-N0-iLO" secondAttribute="leading" id="cNH-Te-zDi"/>
                             <constraint firstItem="ZUM-fj-gt8" firstAttribute="centerY" secondItem="9l7-W1-v86" secondAttribute="centerY" id="gQg-x1-FWE"/>
@@ -269,7 +271,6 @@
                             <constraint firstItem="ZUM-fj-gt8" firstAttribute="leading" secondItem="ta8-fC-DQK" secondAttribute="leading" id="pLt-HT-RyB"/>
                             <constraint firstItem="ZUM-fj-gt8" firstAttribute="trailing" secondItem="ta8-fC-DQK" secondAttribute="trailing" id="pX6-Ev-L3b"/>
                             <constraint firstItem="ta8-fC-DQK" firstAttribute="top" secondItem="ZUM-fj-gt8" secondAttribute="bottom" constant="8" symbolic="YES" id="sJj-Gz-Oat"/>
-                            <constraint firstItem="R6h-dD-pw2" firstAttribute="leading" secondItem="9l7-W1-v86" secondAttribute="leading" constant="127" id="sgM-SY-ITM"/>
                             <constraint firstItem="x4H-Ur-bmR" firstAttribute="top" secondItem="PHt-pY-mub" secondAttribute="bottom" constant="37" id="wfx-nT-nX3"/>
                         </constraints>
                         <variation key="default">
@@ -926,7 +927,7 @@
         <image name="User" width="25" height="25"/>
         <image name="add" width="25" height="25"/>
         <image name="logo-black.png" width="2291" height="885"/>
-        <image name="logo-reverse.png" width="2291" height="885"/>
+        <image name="logo-reverse.png" width="2096" height="543"/>
         <image name="subtract" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
