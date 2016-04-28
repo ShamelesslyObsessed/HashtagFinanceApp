@@ -11,6 +11,13 @@
 		A65D46C01CC983130083494A /* logo-black-sm.png in Resources */ = {isa = PBXBuildFile; fileRef = A65D46BF1CC983130083494A /* logo-black-sm.png */; };
 		A6FE4E101CC6DA3200170A44 /* logo-reverse.png in Resources */ = {isa = PBXBuildFile; fileRef = A6FE4E0F1CC6DA3200170A44 /* logo-reverse.png */; };
 		A6FE4E121CC6DB8C00170A44 /* logo-black.png in Resources */ = {isa = PBXBuildFile; fileRef = A6FE4E111CC6DB8C00170A44 /* logo-black.png */; };
+		D78A64D51CD17DC3005374E1 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78A64CD1CD17DC3005374E1 /* Decoder.swift */; };
+		D78A64D61CD17DC3005374E1 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78A64CE1CD17DC3005374E1 /* Encoder.swift */; };
+		D78A64D71CD17DC3005374E1 /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78A64CF1CD17DC3005374E1 /* ExtensionArray.swift */; };
+		D78A64D81CD17DC3005374E1 /* ExtensionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78A64D01CD17DC3005374E1 /* ExtensionDictionary.swift */; };
+		D78A64D91CD17DC3005374E1 /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78A64D21CD17DC3005374E1 /* Gloss.swift */; };
+		D78A64DA1CD17DC3005374E1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D78A64D31CD17DC3005374E1 /* Info.plist */; };
+		D78A64DB1CD17DC3005374E1 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78A64D41CD17DC3005374E1 /* Operators.swift */; };
 		F06737081CB8952A00354AF9 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737071CB8952A00354AF9 /* TransactionTableViewCell.swift */; };
 		F067370A1CB8A63B00354AF9 /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06737091CB8A63B00354AF9 /* AccountsTableViewController.swift */; };
 		F067370C1CB8A65B00354AF9 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F067370B1CB8A65B00354AF9 /* AccountsTableViewCell.swift */; };
@@ -56,6 +63,14 @@
 		A65D46BF1CC983130083494A /* logo-black-sm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-black-sm.png"; path = "../../../Documents/logo-black-sm.png"; sourceTree = "<group>"; };
 		A6FE4E0F1CC6DA3200170A44 /* logo-reverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-reverse.png"; path = "../../../Downloads/logo-reverse.png"; sourceTree = "<group>"; };
 		A6FE4E111CC6DB8C00170A44 /* logo-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo-black.png"; path = "../../../Downloads/logo-black.png"; sourceTree = "<group>"; };
+		D78A64CD1CD17DC3005374E1 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Decoder.swift; path = Gloss/Decoder.swift; sourceTree = "<group>"; };
+		D78A64CE1CD17DC3005374E1 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encoder.swift; path = Gloss/Encoder.swift; sourceTree = "<group>"; };
+		D78A64CF1CD17DC3005374E1 /* ExtensionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionArray.swift; path = Gloss/ExtensionArray.swift; sourceTree = "<group>"; };
+		D78A64D01CD17DC3005374E1 /* ExtensionDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionDictionary.swift; path = Gloss/ExtensionDictionary.swift; sourceTree = "<group>"; };
+		D78A64D11CD17DC3005374E1 /* Gloss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gloss.h; path = Gloss/Gloss.h; sourceTree = "<group>"; };
+		D78A64D21CD17DC3005374E1 /* Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gloss.swift; path = Gloss/Gloss.swift; sourceTree = "<group>"; };
+		D78A64D31CD17DC3005374E1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Gloss/Info.plist; sourceTree = "<group>"; };
+		D78A64D41CD17DC3005374E1 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Gloss/Operators.swift; sourceTree = "<group>"; };
 		F06737071CB8952A00354AF9 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionTableViewCell.swift; path = ../TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		F06737091CB8A63B00354AF9 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
 		F067370B1CB8A65B00354AF9 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +143,21 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		D78A64CC1CD17D85005374E1 /* Gloss */ = {
+			isa = PBXGroup;
+			children = (
+				D78A64CD1CD17DC3005374E1 /* Decoder.swift */,
+				D78A64CE1CD17DC3005374E1 /* Encoder.swift */,
+				D78A64CF1CD17DC3005374E1 /* ExtensionArray.swift */,
+				D78A64D01CD17DC3005374E1 /* ExtensionDictionary.swift */,
+				D78A64D11CD17DC3005374E1 /* Gloss.h */,
+				D78A64D21CD17DC3005374E1 /* Gloss.swift */,
+				D78A64D31CD17DC3005374E1 /* Info.plist */,
+				D78A64D41CD17DC3005374E1 /* Operators.swift */,
+			);
+			name = Gloss;
+			sourceTree = "<group>";
+		};
 		F067370F1CB8A76400354AF9 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +214,7 @@
 		F0EF07E81CB8589100DEC33C /* HashtagFinance */ = {
 			isa = PBXGroup;
 			children = (
+				D78A64CC1CD17D85005374E1 /* Gloss */,
 				8E4DA75F1CBDA50200A4AEDA /* Objects */,
 				F06737131CB8CA4500354AF9 /* Groups */,
 				F06737101CB8A77C00354AF9 /* Accounts */,
@@ -329,6 +360,7 @@
 				A6FE4E101CC6DA3200170A44 /* logo-reverse.png in Resources */,
 				F0EF07F11CB8589100DEC33C /* Assets.xcassets in Resources */,
 				F0EF07EF1CB8589100DEC33C /* Main.storyboard in Resources */,
+				D78A64DA1CD17DC3005374E1 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +388,9 @@
 				F0EF08181CB86D6900DEC33C /* TabBarController.swift in Sources */,
 				F067370C1CB8A65B00354AF9 /* AccountsTableViewCell.swift in Sources */,
 				F06737121CB8AA0E00354AF9 /* AddAccountViewController.swift in Sources */,
+				D78A64D71CD17DC3005374E1 /* ExtensionArray.swift in Sources */,
 				F0EF07EC1CB8589100DEC33C /* ViewController.swift in Sources */,
+				D78A64D51CD17DC3005374E1 /* Decoder.swift in Sources */,
 				F0EF07EA1CB8589100DEC33C /* AppDelegate.swift in Sources */,
 				F067370A1CB8A63B00354AF9 /* AccountsTableViewController.swift in Sources */,
 				F067371D1CB8D70600354AF9 /* CustomAddButtonTableViewCell.swift in Sources */,
@@ -369,7 +403,11 @@
 				F067371F1CB8DC7200354AF9 /* LoginViewController.swift in Sources */,
 				F0EF081C1CB87B6300DEC33C /* AddTransactionViewController.swift in Sources */,
 				F06737081CB8952A00354AF9 /* TransactionTableViewCell.swift in Sources */,
+				D78A64D91CD17DC3005374E1 /* Gloss.swift in Sources */,
+				D78A64DB1CD17DC3005374E1 /* Operators.swift in Sources */,
+				D78A64D61CD17DC3005374E1 /* Encoder.swift in Sources */,
 				F0EF081E1CB880F900DEC33C /* Transaction.swift in Sources */,
+				D78A64D81CD17DC3005374E1 /* ExtensionDictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
