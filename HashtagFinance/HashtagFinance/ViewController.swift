@@ -59,12 +59,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        print(transactions.count)
-        
-        print(tableView.numberOfRowsInSection(0))
-    }
-    
     func updateMoneyLabel() {
         let moneyAfterTransactions = moneyOriginal + transactionTotal
         let moneyString = "$" + String(moneyAfterTransactions)
