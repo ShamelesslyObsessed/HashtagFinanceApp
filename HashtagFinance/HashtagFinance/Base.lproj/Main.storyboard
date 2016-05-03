@@ -241,7 +241,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-reverse.png" translatesAutoresizingMaskIntoConstraints="NO" id="hvh-SK-c8J">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-reverse" translatesAutoresizingMaskIntoConstraints="NO" id="hvh-SK-c8J">
                                 <rect key="frame" x="180" y="64" width="240" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="HY2-Er-trt"/>
@@ -927,7 +927,7 @@
         <image name="User" width="25" height="25"/>
         <image name="add" width="25" height="25"/>
         <image name="logo-black.png" width="2291" height="885"/>
-        <image name="logo-reverse.png" width="2096" height="543"/>
+        <image name="logo-reverse" width="1048" height="271"/>
         <image name="subtract" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
