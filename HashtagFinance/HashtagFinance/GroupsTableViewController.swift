@@ -13,11 +13,8 @@ class GroupsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Need this line in order to push the table view below the navigation bar.
+        self.tableView.contentInset = UIEdgeInsetsMake(60,0,0,0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +48,7 @@ class GroupsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if (indexPath.row == 0) {
-            self.performSegueWithIdentifier("AddGroupSegue", sender: self)
+            //self.performSegueWithIdentifier("AddGroupSegue", sender: self)
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

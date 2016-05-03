@@ -36,16 +36,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             transactions += savedItems
         }
         else {
-            // NEED TO REMOVE EVENTUALLY - FOR TESTING PURPOSES ONLY
-            // testItems()
+            testItems()
         }
-        testItems()
     }
     
     // When the view appears
     override func viewDidAppear(animated: Bool) {
+        // Used the saved value to refresh the money label text
         moneyOriginal = money
         
+        // If money is nil, set the amount to the first account's total, otherwise update the total for 
         if (money == nil) {
             moneyLabel.text = "$" + String(accounts.first!.total)
         }

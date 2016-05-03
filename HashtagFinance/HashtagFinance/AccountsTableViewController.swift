@@ -27,8 +27,9 @@ class AccountsTableViewController: UITableViewController {
         
     }
     
+    // Test items used to test if accounts can be made.
     func testItems() {
-        let account1 = Account(account: "Checking", total: 8090.45)!
+        let account1 = Account(account: "Savings", total: 4398.21)!
         
         accounts.append(account1)
     }
@@ -36,8 +37,10 @@ class AccountsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("AccountsTableViewCell", forIndexPath: indexPath) as! AccountsTableViewCell
         
+        // For the selected row, grab the account
         let account = accounts[indexPath.row]
         
+        // Set the "account name" label to the account's name, and the "account total" label to the account's total.
         cell.accountNameLabel.text = account.account
         cell.accountTotalLabel.text = String(account.total)
         
@@ -45,27 +48,31 @@ class AccountsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // The number of rows in the section is equal the number of accounts.
         return accounts.count
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // Number of sections
+        // Number of sections: just one section
         return 1
     }
     
     // MARK: NSCoding
     func saveItems() {
+        // This function saves each account so that the data persists
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(accounts, toFile: Account.ArchiveURL.path!)
         if !isSuccessfulSave {
             print("Failed to load accounts.")
         }
     }
-    
+
     func loadItems() -> [Account]? {
+        // This function loads each of the saved accounts from the file
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Account.ArchiveURL.path!) as? [Account]
     }
     
     @IBAction func unwindToList (sender: UIStoryboardSegue) {
+        // 
         if let sourceViewController = sender.sourceViewController as? AddAccountViewController, account = sourceViewController.account {
             //
             //            if let selectedIndexPath = tableView.indexPathForSelectedRow {

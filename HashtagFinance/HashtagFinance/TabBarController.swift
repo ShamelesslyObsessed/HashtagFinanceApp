@@ -13,8 +13,11 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Give the tab bar buttons a new tint color
         self.tabBar.tintColor = UIColor(red:0.0, green:0.5, blue:0.25, alpha:1.0)
-        self.selectedIndex = 2
+        
+        // Start the tab controller on the middle selection
+        self.selectedIndex = 1
     }
 
     override func didReceiveMemoryWarning() {
