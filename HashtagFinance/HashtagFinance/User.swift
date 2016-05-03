@@ -61,7 +61,7 @@ class User: NSObject, NSCoding{
         let password = aDecoder.decodeObjectForKey(PropertyKey.passwordKey) as! String
         let firstname = aDecoder.decodeObjectForKey(PropertyKey.firstnameKey) as! String
         let lastname = aDecoder.decodeObjectForKey(PropertyKey.lastnameKey) as! String
-        let listOfAccounts = aDecoder.decodeObjectForKey(PropertyKey.listOfAccountsKey) as! [Account]
+        let listOfAccounts = aDecoder.decodeObjectForKey(PropertyKey.listOfAccountsKey) as? [Account]
         
         
         // Must call designated initializer.

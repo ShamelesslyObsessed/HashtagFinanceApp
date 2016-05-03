@@ -14,6 +14,7 @@ class TransactionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

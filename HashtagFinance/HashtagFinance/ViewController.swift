@@ -12,17 +12,19 @@ import UIKit
 public var money: Double!
 public var transactionTotal = 0.0
 
+// globally accessible arrays to hold transactions and accounts
+var transactions = [Transaction]()
+var accounts = [Account]()
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var tableView: UITableView!      // table view containing the transactions
     @IBOutlet weak var homeButton: UITabBarItem!
+    @IBOutlet weak var moneyLabel: UILabel!         // big label displaying the total
     
-    @IBOutlet weak var moneyLabel: UILabel!
-    
+    // used to save off original money value
     var moneyOriginal: Double!
-    
-    var transactions = [Transaction]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +37,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         else {
             // NEED TO REMOVE EVENTUALLY - FOR TESTING PURPOSES ONLY
-            //testItems()
+            // testItems()
         }
+        testItems()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    // When the view appears
+    override func viewDidAppear(animated: Bool) {
         moneyOriginal = money
         
         if (money == nil) {
-            moneyLabel.text = "$0.00"
+            moneyLabel.text = "$" + String(accounts.first!.total)
         }
         else {
             if (transactionTotal == 0) {
@@ -55,18 +59,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        print(transactions.count)
+        
+        print(tableView.numberOfRowsInSection(0))
+    }
+    
     func updateMoneyLabel() {
         let moneyAfterTransactions = moneyOriginal + transactionTotal
         let moneyString = "$" + String(moneyAfterTransactions)
         moneyLabel.text = moneyString
-    }
-    
-    func testItems() {
-        let testDate: NSDate!
-        testDate = NSDate()
-        let transaction1 = Transaction(amount: 450.98, name: "Paid electric bill", desc: "", date: testDate)!
-        
-        transactions.append(transaction1)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -76,6 +78,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.amountLabel.text = String(transaction.amount)
         cell.nameLabel.text = transaction.name
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        let dateString = formatter.stringFromDate(transaction.date)
+        
+        cell.dateLabel.text = dateString
         
         
         let transactionAmount = String(transaction.amount)
@@ -102,38 +110,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-            let itemDetailViewController = segue.destinationViewController as! AddTransactionViewController
-            if let selectedCell = sender as? TransactionTableViewCell {
-                
-                // Get the cell that was selected
-                let indexPath = tableView.indexPathForCell(selectedCell)!
-                let selectedItem = transactions[indexPath.row]
-                itemDetailViewController.transaction = selectedItem
-            }
+        let itemDetailViewController = segue.destinationViewController as! AddTransactionViewController
+        if let selectedCell = sender as? TransactionTableViewCell {
+            
+            // Get the cell that was selected
+            let indexPath = tableView.indexPathForCell(selectedCell)!
+            let selectedItem = transactions[indexPath.row]
+            itemDetailViewController.transaction = selectedItem
+        }
         
     }
     
     @IBAction func unwindToList (sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? AddTransactionViewController, transaction = sourceViewController.transaction {
             
-                        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                            // Update an existing item
-                            transactions[selectedIndexPath.row] = transaction
-                            tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
-                        }
-                        else {
-                            // Add item
-            let newIndexPath = NSIndexPath(forRow: transactions.count, inSection: 0)
-            transactions.append(transaction)
-            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
-            
-             }
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing item
+                transactions[selectedIndexPath.row] = transaction
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            }
+            else {
+                // Add item
+                let newIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+                transactions.insert(transaction, atIndex: 0)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
+                
+            }
             // Save items so that they persist if the app is closed
             saveItems()
             updateMoneyLabel()
         }
     }
     
+    // I only wrote this so that if a user clicks on a row, it won't stay visually selected (hence animated = true)
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -154,6 +163,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func loadItems() -> [Transaction]? {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Transaction.ArchiveURL.path!) as? [Transaction]
+    }
+    
+    // For testing purposes only
+    func testItems() {
+        let account1 = Account(account: "Checking", total: 8090.45)!
+        
+        accounts.append(account1)
+    }
+    
+    func testItems2() {
+        let testDate: NSDate!
+        testDate = NSDate()
+        let transaction1 = Transaction(amount: 450.98, name: "Paid electric bill", desc: "", date: testDate)!
+        
+        transactions.append(transaction1)
     }
     
 }

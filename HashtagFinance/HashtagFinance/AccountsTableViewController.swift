@@ -10,8 +10,6 @@ import UIKit
 
 
 class AccountsTableViewController: UITableViewController {
-
-    var accounts = [Account]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +88,6 @@ class AccountsTableViewController: UITableViewController {
         
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! AccountsTableViewCell
         money = Double(currentCell.accountTotalLabel.text!)
-        print(money)
         
         // Activate checkmark!
         let numberOfRows = tableView.numberOfRowsInSection(0)
