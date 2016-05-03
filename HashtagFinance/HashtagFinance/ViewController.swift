@@ -60,6 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func updateMoneyLabel() {
+        // This function updates the big money label whenever a transaction has been made.
         let moneyAfterTransactions = moneyOriginal + transactionTotal
         let moneyString = "$" + String(moneyAfterTransactions)
         moneyLabel.text = moneyString
@@ -68,18 +69,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TransactionTableViewCell", forIndexPath: indexPath) as! TransactionTableViewCell
         
+        // For the selected row, grab that transaction
         let transaction = transactions[indexPath.row]
         
+        // Set the "amount" label to the transaction's amount.
+        // Set the "name" label to the transaction's name
         cell.amountLabel.text = String(transaction.amount)
         cell.nameLabel.text = transaction.name
         
+        // Format the transaction's date and set the "date" label to it
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.ShortStyle
         let dateString = formatter.stringFromDate(transaction.date)
         
         cell.dateLabel.text = dateString
         
-        
+        // Decides 
         let transactionAmount = String(transaction.amount)
         if (transactionAmount[transactionAmount.startIndex.advancedBy(0)] != "-") {
             cell.amountLabel.textColor = UIColor(red:0.0, green:0.5, blue:0.25, alpha:1.0)
