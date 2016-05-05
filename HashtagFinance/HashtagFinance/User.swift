@@ -6,10 +6,9 @@
 //  Copyright © 2016 Rhiannon Weiss. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
+// A User object we were thinking of doing but didn't quite implement...
 class User: NSObject, NSCoding{
     
     var username: String!

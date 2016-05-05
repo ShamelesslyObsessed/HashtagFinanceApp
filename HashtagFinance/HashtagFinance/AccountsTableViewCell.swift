@@ -10,6 +10,7 @@ import UIKit
 
 class AccountsTableViewCell: UITableViewCell {
 
+    // The UI labels for each account cell, so they can be set in the AccountsTableViewController
     @IBOutlet weak var accountTotalLabel: UILabel!
     @IBOutlet weak var accountNameLabel: UILabel!
     
@@ -20,8 +21,7 @@ class AccountsTableViewCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+
     }
     
 }

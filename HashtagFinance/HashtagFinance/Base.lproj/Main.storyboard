@@ -97,7 +97,7 @@
                                             <outlet property="amountLabel" destination="tbq-Pi-RyS" id="DjS-37-cd8"/>
                                             <outlet property="dateLabel" destination="qUc-vB-JMg" id="1SZ-B3-WT0"/>
                                             <outlet property="nameLabel" destination="7zU-zS-Ac6" id="vtY-BU-cUC"/>
-                                            <segue destination="ats-rR-y7r" kind="show" id="6lV-YJ-Lew"/>
+                                            <segue destination="ats-rR-y7r" kind="show" identifier="EditItem" id="6lV-YJ-Lew"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

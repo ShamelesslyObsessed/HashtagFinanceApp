@@ -8,6 +8,9 @@
 
 import UIKit
 
+// This is a transaction object. Every time a transaction is added, one of these is created. 
+// Each transaction object contains the transaction amount, transaction description, title/name
+// of the transaction, and the date.
 
 class Transaction: NSObject, NSCoding {
     
@@ -19,10 +22,12 @@ class Transaction: NSObject, NSCoding {
     
     
     // MARK: Archiving Paths
+    // This is where we determine where the transaction items will be stored in the file directory.
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("transactions")
     
     // MARK: Types
+    // Defining keys for encoding/decoding.
     struct PropertyKey {
         static let amountKey = "amount"
         static let nameKey = "name"
@@ -41,6 +46,7 @@ class Transaction: NSObject, NSCoding {
     }
     
     // MARK: NSCoding
+    // This is the function that encodes and saves each of the transaction items
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(amount, forKey: PropertyKey.amountKey)
         aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
@@ -48,6 +54,7 @@ class Transaction: NSObject, NSCoding {
         aCoder.encodeObject(date, forKey: PropertyKey.dateKey)
     }
     
+    // This is the function that decodes each of the tranasaction items for use again
     required convenience init?(coder aDecoder: NSCoder) {
         let amount = aDecoder.decodeObjectForKey(PropertyKey.amountKey) as! Double
         let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String

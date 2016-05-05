@@ -14,6 +14,7 @@ class AccountsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Make the table view a delegate of itself
         tableView.delegate = self
         
         // Load any saved items, otherwise toss in sample data
@@ -21,17 +22,9 @@ class AccountsTableViewController: UITableViewController {
             accounts += savedItems
         }
         else {
-            // NEED TO REMOVE EVENTUALLY - FOR TESTING PURPOSES ONLY
-            testItems()
+            //testItems()
         }
         
-    }
-    
-    // Test items used to test if accounts can be made.
-    func testItems() {
-        let account1 = Account(account: "Savings", total: 4398.21)!
-        
-        accounts.append(account1)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -65,27 +58,21 @@ class AccountsTableViewController: UITableViewController {
             print("Failed to load accounts.")
         }
     }
-
+    
     func loadItems() -> [Account]? {
         // This function loads each of the saved accounts from the file
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Account.ArchiveURL.path!) as? [Account]
     }
     
+        // When the 'submit' button in the AddAccountViewController is pressed, it performs an exit segue with this view. This is the function that handles it.
     @IBAction func unwindToList (sender: UIStoryboardSegue) {
-        // 
         if let sourceViewController = sender.sourceViewController as? AddAccountViewController, account = sourceViewController.account {
-            //
-            //            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            //                // Update an existing item
-            //                transactions[selectedIndexPath.row] = transaction
-            //                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
-            //            }
-            //            else {
-            //                // Add item
+            
+            // Add the new item to the table
             let newIndexPath = NSIndexPath(forRow: accounts.count, inSection: 0)
             accounts.append(account)
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
-            // }
+            
             // Save items so that they persist if the app is closed
             saveItems()
         }
@@ -96,7 +83,7 @@ class AccountsTableViewController: UITableViewController {
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! AccountsTableViewCell
         money = Double(currentCell.accountTotalLabel.text!)
         
-        // Activate checkmark!
+        // Activate checkmark if that row was selected
         let numberOfRows = tableView.numberOfRowsInSection(0)
         for row in 0..<numberOfRows {
             if let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0)) {
@@ -104,5 +91,4 @@ class AccountsTableViewController: UITableViewController {
             }
         }
     }
-    
 }

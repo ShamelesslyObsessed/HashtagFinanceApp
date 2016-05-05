@@ -10,19 +10,24 @@ import UIKit
 
 class AddTransactionViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate  {
     
+    // Each of the outlets for UI items in this view controller
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    // Custom subtract and add buttons
     @IBOutlet weak var subtractButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
+    
+    var newTransaction: Bool = true
     
     var transaction: Transaction?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Make each item its own delegate
         amountTextField.delegate = self
         nameTextField.delegate = self
         descriptionTextView.delegate = self
@@ -33,8 +38,10 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UITex
             nameTextField.text = transaction.name
             descriptionTextView.text = transaction.desc
             datePicker.date = transaction.date
+            newTransaction = false
         }
         
+        // Make the button have rounded corners and green border.
         descriptionTextView.layer.cornerRadius = 5
         submitButton.layer.cornerRadius = 5
         submitButton.layer.borderWidth = 1
@@ -47,6 +54,7 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     @IBAction func pressedAdd(sender: UIButton) {
+        // Make transaction positive
         let text: String = amountTextField.text!
         if (text[text.startIndex.advancedBy(0)] == "-") {
             amountTextField.text = String(amountTextField.text!.characters.dropFirst())
@@ -54,6 +62,7 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     @IBAction func pressedSubtract(sender: UIButton) {
+        // Make tranasction negative
         let text: String = amountTextField.text!
         if (text[text.startIndex.advancedBy(0)] != "-"){
             amountTextField.text = "-" + amountTextField.text!
@@ -63,13 +72,22 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UITex
     // Create an item for the CustomListTable to use if the Save button was pressed
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if submitButton === sender {
+            
             let amount = Double(amountTextField.text!)!
             let name = nameTextField.text!
             let desc = descriptionTextView.text ?? ""
             let date = datePicker.date
             
-            transaction = Transaction(amount: amount, name: name, desc: desc, date: date)
-            transactionTotal = transactionTotal + amount
+            if (newTransaction){
+                transaction = Transaction(amount: amount, name: name, desc: desc, date: date)
+                transactionTotal = transactionTotal + amount
+            }
+            else {
+                transaction?.amount = amount
+                transaction?.name = name
+                transaction?.date = date
+                transaction?.desc = desc
+            }
         }
     }
     

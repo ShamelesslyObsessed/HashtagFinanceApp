@@ -84,7 +84,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.dateLabel.text = dateString
         
-        // Decides 
+        // Decides whether the tranasction is positive or negative. If it is positive, make the 
+        // text color green, otherwise make the text color red.
         let transactionAmount = String(transaction.amount)
         if (transactionAmount[transactionAmount.startIndex.advancedBy(0)] != "-") {
             cell.amountLabel.textColor = UIColor(red:0.0, green:0.5, blue:0.25, alpha:1.0)
@@ -98,11 +99,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                // The number of rows in the section is equal the number of tranasctions.
         return transactions.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // Number of sections
+        // Number of sections - only need one.
         return 1
     }
     
@@ -120,16 +122,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    // When the 'submit' button in the AddTransactionViewController is pressed, it performs an exit segue with this main view. This is the function that handles it.
     @IBAction func unwindToList (sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? AddTransactionViewController, transaction = sourceViewController.transaction {
             
+            // If one of the rows is selected...
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing item
                 transactions[selectedIndexPath.row] = transaction
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                print("selected")
             }
             else {
-                // Add item
+                // Add the new item to the table
                 let newIndexPath = NSIndexPath(forRow: 0, inSection: 0)
                 transactions.insert(transaction, atIndex: 0)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
@@ -154,6 +159,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: NSCoding
     func saveItems() {
+        // This function saves each account so that the data persists
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(transactions, toFile: Transaction.ArchiveURL.path!)
         if !isSuccessfulSave {
             print("Failed to load transactions.")
@@ -161,6 +167,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func loadItems() -> [Transaction]? {
+        // This function loads each of the saved tranasctions from the file
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Transaction.ArchiveURL.path!) as? [Transaction]
     }
     

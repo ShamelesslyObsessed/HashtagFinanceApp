@@ -10,10 +10,9 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
     
+    // The UI labels for each account cell, so they can be set in the main ViewController
     @IBOutlet weak var amountLabel: UILabel!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
@@ -23,8 +22,5 @@ class TransactionTableViewCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
-    
 }
