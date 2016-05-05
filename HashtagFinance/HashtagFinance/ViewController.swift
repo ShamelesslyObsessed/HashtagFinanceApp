@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // used to save off original money value
     var moneyOriginal: Double!
+    var selectedRow: NSIndexPath!
 
     
     override func viewDidLoad() {
@@ -110,6 +111,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+         selectedRow = tableView.indexPathForSelectedRow
         
         let itemDetailViewController = segue.destinationViewController as! AddTransactionViewController
         if let selectedCell = sender as? TransactionTableViewCell {
@@ -127,7 +129,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let sourceViewController = sender.sourceViewController as? AddTransactionViewController, transaction = sourceViewController.transaction {
             
             // If one of the rows is selected...
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            if let selectedIndexPath = selectedRow {
                 // Update an existing item
                 transactions[selectedIndexPath.row] = transaction
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
