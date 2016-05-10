@@ -15,6 +15,7 @@ public var transactionTotal = 0.0
 // globally accessible arrays to hold transactions and accounts
 var transactions = [Transaction]()
 var accounts = [Account]()
+var currentAccount : Account?
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -32,12 +33,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.delegate = self
         
-        // Load any saved items, otherwise toss in sample data
-        if let savedItems = loadItems() {
-            transactions += savedItems
-        }
-        else {
+        // Let's load the accounts
+        if let accountLoader = loadAccounts() {
+            accounts = accountLoader
+        } else {
             testItems()
+        }
+        
+        // Let's load the transactions
+        if let transactionLoader = loadTransactions() {
+            transactions = transactionLoader
+        } else {
+            testItems2()
+        }
+        
+        currentAccount = Account.this
+        if currentAccount == nil {
+            money = 0.0
+        } else {
+            money = currentAccount!.total
         }
     }
     
@@ -48,7 +62,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // If money is nil, set the amount to the first account's total, otherwise update the total for 
         if (money == nil) {
-            moneyLabel.text = "$" + String(accounts.first!.total)
+            if (accounts.first == nil) {
+                moneyLabel.text = "$0.00"
+            } else {
+                moneyLabel.text = "$" + String(accounts.first!.total)
+            }
         }
         else {
             if (transactionTotal == 0) {
@@ -63,6 +81,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func updateMoneyLabel() {
         // This function updates the big money label whenever a transaction has been made.
         let moneyAfterTransactions = moneyOriginal + transactionTotal
+        
+        // Update the account object
+        if currentAccount != nil {
+            currentAccount?.total = moneyAfterTransactions
+            NSKeyedArchiver.archiveRootObject(currentAccount!, toFile: Account.ArchiveURL.path!)
+        }
+        
         let moneyString = "$" + String(moneyAfterTransactions)
         moneyLabel.text = moneyString
     }
@@ -143,7 +168,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
             }
             // Save items so that they persist if the app is closed
-            saveItems()
+            //saveItems()
+//            transaction.save()
+            saveTransactions()
             updateMoneyLabel()
         }
     }
@@ -159,33 +186,55 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    func loadTransactions() -> [Transaction]? {
+        print("Loading Transactions")
+        // This function loads each of the saved accounts from the file
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Account.ArchiveURL.path!) as? [Transaction]
+    }
+    
+    func loadAccounts() -> [Account]? {
+        print("Loading Accounts")
+        // This function loads each of the saved accounts from the file
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Account.ArchiveURL.path!) as? [Account]
+    }
+    
     // MARK: NSCoding
-    func saveItems() {
+    func saveTransactions() {
         // This function saves each account so that the data persists
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(transactions, toFile: Transaction.ArchiveURL.path!)
         if !isSuccessfulSave {
-            print("Failed to load transactions.")
+            print("Failed to save transactions.")
+        } else {
+            print("Saved transaction")
         }
     }
     
-    func loadItems() -> [Transaction]? {
-        // This function loads each of the saved tranasctions from the file
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Transaction.ArchiveURL.path!) as? [Transaction]
+    func saveAccounts() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(accounts, toFile: Account.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save accounts.")
+        } else {
+            print("Saved account")
+        }
     }
     
     // For testing purposes only
     func testItems() {
         let account1 = Account(account: "Checking", total: 8090.45)!
+//        account1.save()
         
         accounts.append(account1)
+        saveAccounts()
     }
     
     func testItems2() {
         let testDate: NSDate!
         testDate = NSDate()
         let transaction1 = Transaction(amount: 450.98, name: "Paid electric bill", desc: "", date: testDate)!
+//        transaction1.save()
         
         transactions.append(transaction1)
+        saveTransactions()
     }
     
 }

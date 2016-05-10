@@ -14,16 +14,20 @@ class AccountsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         // Make the table view a delegate of itself
         tableView.delegate = self
         
+        accounts = []
+        
         // Load any saved items, otherwise toss in sample data
-        if let savedItems = loadItems() {
-            accounts += savedItems
+        if let accountLoader = loadItems() {
+            accounts = accountLoader
         }
-        else {
-            //testItems()
-        }
+//        else {
+//            //testItems()
+//        }
         
     }
     
@@ -45,6 +49,17 @@ class AccountsTableViewController: UITableViewController {
         return accounts.count
     }
     
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        print("debug: Did you select me?")
+        
+        // If selected, grab the account
+        let account = accounts[indexPath.row]
+        
+        // Save off the current account
+        Account.this?.isCurrent = false
+        account.isCurrent = true
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Number of sections: just one section
         return 1
@@ -55,13 +70,24 @@ class AccountsTableViewController: UITableViewController {
         // This function saves each account so that the data persists
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(accounts, toFile: Account.ArchiveURL.path!)
         if !isSuccessfulSave {
-            print("Failed to load accounts.")
+            print("Failed to save accounts.")
+        } else {
+            print("Saved account")
         }
     }
-    
+
     func loadItems() -> [Account]? {
+        print("Loading accounts")
         // This function loads each of the saved accounts from the file
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Account.ArchiveURL.path!) as? [Account]
+        let accounts = NSKeyedUnarchiver.unarchiveObjectWithFile(Account.ArchiveURL.path!) as? [Account]
+        
+        if accounts == nil {
+            print("Failed to load accounts")
+        } else {
+            print("Successfully loaded accounts")
+        }
+        
+        return accounts
     }
     
         // When the 'submit' button in the AddAccountViewController is pressed, it performs an exit segue with this view. This is the function that handles it.
@@ -70,6 +96,7 @@ class AccountsTableViewController: UITableViewController {
             
             // Add the new item to the table
             let newIndexPath = NSIndexPath(forRow: accounts.count, inSection: 0)
+            print("Appending")
             accounts.append(account)
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
             

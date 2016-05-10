@@ -49,6 +49,7 @@ class AddAccountViewController: UIViewController, UITextFieldDelegate {
             let total = Double(accountTotalTextField.text!)!
             
             account = Account(account: name, total: total)
+            NSKeyedArchiver.archiveRootObject(account!, toFile: Account.ArchiveURL.path!)
         }
     }
     

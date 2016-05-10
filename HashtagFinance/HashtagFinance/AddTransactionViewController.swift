@@ -80,6 +80,12 @@ class AddTransactionViewController: UIViewController, UITextFieldDelegate, UITex
             
             if (newTransaction){
                 transaction = Transaction(amount: amount, name: name, desc: desc, date: date)
+                
+                // Let's save it
+//                if NSKeyedArchiver.archiveRootObject(transaction!, toFile: Transaction.ArchiveURL.path!) {
+//                    print("Saved transaction")
+//                }
+                
                 transactionTotal = transactionTotal + amount
             }
             else {
