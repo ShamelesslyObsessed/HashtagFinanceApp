@@ -189,7 +189,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func loadTransactions() -> [Transaction]? {
         print("Loading Transactions")
         // This function loads each of the saved accounts from the file
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Account.ArchiveURL.path!) as? [Transaction]
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Transaction.ArchiveURL.path!) as? [Transaction]
     }
     
     func loadAccounts() -> [Account]? {
