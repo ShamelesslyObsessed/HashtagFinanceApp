@@ -16,6 +16,8 @@ class Transaction: NSObject, NSCoding {
     
     static var transactions: [Transaction] = []
     
+    var transactionIndex: Int?
+    
     // MARK: Properties
     var accountId: Int
     var amount: Double!
@@ -40,7 +42,14 @@ class Transaction: NSObject, NSCoding {
     
     // MARK: Initialization
     init?(amount: Double, name: String, desc: String?, date: NSDate) {
-        self.accountId = Account.this!.id
+//        var this: Account? = nil
+        
+        self.accountId = 0
+        
+        if let this = Account.this {
+            self.accountId = this.id
+        }
+        
         self.amount = amount
         self.name = name
         self.desc = desc
@@ -49,6 +58,9 @@ class Transaction: NSObject, NSCoding {
         print("debug: I'm a transaction.  My accountId is \(self.accountId)")
         super.init()
         
+//        if this != nil {
+//            this!.addTransaction(self)
+//        }
         Transaction.transactions.append(self)
     }
     
@@ -61,6 +73,13 @@ class Transaction: NSObject, NSCoding {
         
         print("debug: I'm a transaction.  My accountId is \(self.accountId)")
         super.init()
+        
+        
+//        if let account = Account.getAccountForId(accountId) {
+//            account.addTransaction(self)
+//        } else {
+//            Account.this!.addTransaction(self)
+//        }
         
         Transaction.transactions.append(self)
     }

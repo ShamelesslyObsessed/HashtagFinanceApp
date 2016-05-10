@@ -12,17 +12,25 @@ import UIKit
 // Each account object contains the account name and the total of the account.
 
 class Account: NSObject, NSCoding {
+    
+    static var lastInsertId: Int = 0
 
-    static var accounts : [Account] = []
+    static var accounts : [Int:Account] = [:]
     
     static var this : Account? {
         get {
-            for i in accounts {
+            for (_, i) in accounts {
                 if i.isCurrent {
                     return i
                 }
             }
             return nil
+        }
+        set {
+            for (_, i) in accounts {
+                i.isCurrent = false
+            }
+            newValue?.isCurrent = true
         }
     }
     
@@ -34,7 +42,7 @@ class Account: NSObject, NSCoding {
     var total: Double!
     var isCurrent: Bool
     
-    var transactions: [Transaction] {
+    var transactions: [Transaction]! {
         get {
             var bank: [Transaction] = []
             for i in Transaction.transactions {
@@ -45,6 +53,18 @@ class Account: NSObject, NSCoding {
             return bank
         }
     }
+    
+//    var transactions: [Transaction] {
+//        get {
+//            var bank: [Transaction] = []
+//            for i in Transaction.transactions {
+//                if i.accountId == self.id {
+//                    bank.append(i)
+//                }
+//            }
+//            return bank
+//        }
+//    }
     
     
     // MARK: Archiving Paths
@@ -59,30 +79,37 @@ class Account: NSObject, NSCoding {
         static let totalKey = "total"
         static let accountKey = "account"
         static let isCurrentKey = "isCurrent"
+        static let transactionsKey = "transactions"
     }
     
     // MARK: Initialization
     init?(account: String, total: Double) {
-        self.id = Account.accounts.count
+        print("Last Insert Id = \(Account.lastInsertId)")
+        self.id = ++Account.lastInsertId
         self.total = total
         self.account = account
-        self.isCurrent = true
+        self.isCurrent = false
         
         //self.id = Account.lastId
         //Account.lastId = Account.lastId + 1
         
         super.init()
         
-        Account.accounts.append(self)
+        Account.accounts[self.id] = self
     }
     
-    init?(id: Int!, account: String, total: Double, isCurrent: Bool) {
+    init?(id: Int!, account: String, total: Double, isCurrent: Bool){//, transactions: [Transaction]) {
+        if id > Account.lastInsertId {
+            Account.lastInsertId = id
+            print("Last insert id = \(Account.lastInsertId)")
+        }
         self.id = id
         self.total = total
         self.account = account
         self.isCurrent = isCurrent
+//        self.transactions = transactions
         super.init()
-        Account.accounts.append(self)
+        Account.accounts[self.id] = self
     }
     
     // MARK: NSCoding
@@ -100,9 +127,29 @@ class Account: NSObject, NSCoding {
         let total = aDecoder.decodeObjectForKey(PropertyKey.totalKey) as! Double
         let account = aDecoder.decodeObjectForKey(PropertyKey.accountKey) as! String
         let isCurrent = aDecoder.decodeObjectForKey(PropertyKey.isCurrentKey) as! Bool
+//        let transactions = aDecoder.decodeObjectForKey(PropertyKey.transactionsKey) as? [Transaction] ?? []
+        
+//        print("Transactions decoded \(transactions.count)")
+//        for i in transactions {
+//            print(i.name)
+//        }
         
         // Must call designated initializer.
-        self.init(id: id, account: account, total: total, isCurrent: isCurrent)
+        self.init(id: id, account: account, total: total, isCurrent: isCurrent)//, transactions: transactions)
+    }
+    
+//    func addTransaction(transaction: Transaction) {
+//        self.transactions.append(transaction)
+//    }
+    
+    static func getAccountForId(accountId: Int) -> Account? {
+//        for i in Account.accounts {
+//            if i.id == accountId {
+//                return i
+//            }
+//        }
+//        return nil
+        return Account.accounts[accountId]
     }
     
 }

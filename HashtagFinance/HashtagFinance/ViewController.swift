@@ -47,12 +47,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             testItems2()
         }
         
+        refreshTransactions()
+        
         currentAccount = Account.this
         if currentAccount == nil {
             money = 0.0
         } else {
             money = currentAccount!.total
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let acc = Account.this {
+            print("Current Account.this.id = \(acc.id)")
+        }
+        self.refreshTransactions()
     }
     
     // When the view appears
@@ -85,7 +94,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Update the account object
         if currentAccount != nil {
             currentAccount?.total = moneyAfterTransactions
-            NSKeyedArchiver.archiveRootObject(currentAccount!, toFile: Account.ArchiveURL.path!)
+//            NSKeyedArchiver.archiveRootObject(currentAccount!, toFile: Account.ArchiveURL.path!)
+            saveAccounts()
         }
         
         let moneyString = "$" + String(moneyAfterTransactions)
@@ -165,21 +175,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let newIndexPath = NSIndexPath(forRow: 0, inSection: 0)
                 transactions.insert(transaction, atIndex: 0)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
-                
             }
             // Save items so that they persist if the app is closed
-            //saveItems()
-//            transaction.save()
             saveTransactions()
             updateMoneyLabel()
         }
     }
     
     // I only wrote this so that if a user clicks on a row, it won't stay visually selected (hence animated = true)
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -218,12 +225,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    func refreshTransactions() {
+        print("Refreshing Transactions")
+        if let this = Account.this {
+            transactions = this.transactions
+            self.moneyLabel.text = "$\(this.total)"
+        }
+        self.tableView.reloadData()
+    }
+    
     // For testing purposes only
     func testItems() {
         let account1 = Account(account: "Checking", total: 8090.45)!
-//        account1.save()
         
         accounts.append(account1)
+//        testItems2()
+        
+        Account.this = account1
         saveAccounts()
     }
     

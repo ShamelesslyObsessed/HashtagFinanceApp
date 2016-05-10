@@ -14,20 +14,8 @@ class AccountsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         // Make the table view a delegate of itself
         tableView.delegate = self
-        
-        accounts = []
-        
-        // Load any saved items, otherwise toss in sample data
-        if let accountLoader = loadItems() {
-            accounts = accountLoader
-        }
-//        else {
-//            //testItems()
-//        }
         
     }
     
@@ -56,8 +44,16 @@ class AccountsTableViewController: UITableViewController {
         let account = accounts[indexPath.row]
         
         // Save off the current account
-        Account.this?.isCurrent = false
-        account.isCurrent = true
+//        Account.this?.isCurrent = false
+//        account.isCurrent = true
+        Account.this = account
+        
+//        // Reseting the transactions
+//        transactions = []
+//        transactions = account.transactions
+        
+        // Save the accounts?
+        saveItems()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
